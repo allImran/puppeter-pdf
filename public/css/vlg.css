@@ -1,0 +1,9 @@
+.vgl-item--transform {
+    right: auto;
+    left: 0;
+    transition-property: transform;
+}
+.vgl-item {
+    position: absolute;
+    box-sizing: border-box;
+}
