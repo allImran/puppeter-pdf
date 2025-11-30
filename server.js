@@ -48,11 +48,19 @@ app.post('/generate-screenshot', async (req, res) => {
     // Wait for charts / grid / CKEditor images to fully render
     //await page.waitforti;
 
-    // const screenshotBuffer = await page.screenshot({
-    //   type: "png",
-    //   fullPage: true
-    // });
-    await page.screenshot({path: 'screenshot.png', fullPage: true});
+    // Calculate the full height of the content
+    const bodyHeight = await page.evaluate(() => {
+      return document.body.scrollHeight;
+    });
+
+    // Resize viewport to full height to avoid scrolling issues
+    await page.setViewport({
+      width: 1600,
+      height: bodyHeight + 100, // Add some buffer
+      deviceScaleFactor: 2
+    });
+
+    await page.screenshot({ path: 'screenshot.png' });
 
     await browser.close();
 
