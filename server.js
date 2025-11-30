@@ -23,7 +23,9 @@ async function generateScreenshot(page, htmlContent) {
                 <link rel="stylesheet" href="http://localhost:${PORT}/css/app.css">
             </head>
             <body>
-              ${htmlContent}
+              <div style="width: 1380px;">
+                ${htmlContent}
+              </div>
             </body>
         </html>`;
 
@@ -32,7 +34,12 @@ async function generateScreenshot(page, htmlContent) {
     });
 
     // Calculate the full height of the content
+    // We target the wrapper div to get the exact content height
     const bodyHeight = await page.evaluate(() => {
+        const wrapper = document.querySelector('body > div');
+        if (wrapper) {
+            return wrapper.offsetHeight;
+        }
         return document.body.scrollHeight;
     });
 
@@ -40,7 +47,7 @@ async function generateScreenshot(page, htmlContent) {
     // User requested PDF width 1380, so we set viewport width to 1380
     await page.setViewport({
         width: 1380,
-        height: bodyHeight + 50, // Add small buffer
+        height: bodyHeight, // Removed buffer to avoid white gap
         deviceScaleFactor: 2
     });
 
