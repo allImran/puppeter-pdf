@@ -1,0 +1,41 @@
+img {
+  width: 100%;
+}
+.image img {
+  display: block;
+  margin: 0 auto;
+  max-width: 100%;
+  min-width: 100%;
+  height: auto;
+}
+img,
+video {
+  max-width: 100%;
+  height: auto;
+}
+img,
+svg,
+video,
+canvas,
+audio,
+iframe,
+embed,
+object {
+  display: block;
+  vertical-align: middle;
+}
+.image.image_resized {
+  max-width: 100%;
+  display: block;
+  box-sizing: border-box;
+}
+.image-inline {
+  position: relative;
+}
+.image {
+  display: table;
+  clear: both;
+  text-align: center;
+  margin: 0.9em auto;
+  min-width: 50px;
+}
