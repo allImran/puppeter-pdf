@@ -127,3 +127,5 @@ app.post('/generate-pdf', async (req, res) => {
 app.listen(PORT, () =>
     console.log(`PDF server running on http://localhost:${PORT}`)
 );
+
+module.exports = app;
