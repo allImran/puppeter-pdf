@@ -1,5 +1,5 @@
 const express = require('express');
-const puppeteer = require('puppeteer');
+// const puppeteer = require('puppeteer'); // Removed to avoid production issues
 const cors = require('cors');
 const { PDFDocument } = require('pdf-lib');
 
@@ -97,10 +97,22 @@ app.post('/generate-pdf', async (req, res) => {
 
     let browser;
     try {
-        browser = await puppeteer.launch({
-            headless: "new",
-            args: ["--no-sandbox", "--disable-setuid-sandbox"]
-        });
+        if (process.env.VERCEL) {
+            const chromium = require('@sparticuz/chromium');
+            const puppeteerCore = require('puppeteer-core');
+            browser = await puppeteerCore.launch({
+                args: chromium.args,
+                defaultViewport: chromium.defaultViewport,
+                executablePath: await chromium.executablePath(),
+                headless: chromium.headless,
+            });
+        } else {
+            const puppeteer = require('puppeteer');
+            browser = await puppeteer.launch({
+                headless: "new",
+                args: ["--no-sandbox", "--disable-setuid-sandbox"]
+            });
+        }
 
         const page = await browser.newPage();
         const screenshots = [];
