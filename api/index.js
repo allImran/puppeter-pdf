@@ -84,6 +84,9 @@ async function createPdfFromImages(imageBuffers) {
 
     return await pdfDoc.save();
 }
+app.get('/', (req, res) => {
+    res.send('Hello World!');
+});
 
 app.post('/generate-pdf', async (req, res) => {
     const { htmlContent } = req.body;
