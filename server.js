@@ -1,5 +1,5 @@
 const express = require('express');
-// const puppeteer = require('puppeteer'); // Removed to avoid production issues
+const puppeteer = require('puppeteer');
 const cors = require('cors');
 const { PDFDocument } = require('pdf-lib');
 
@@ -84,9 +84,6 @@ async function createPdfFromImages(imageBuffers) {
 
     return await pdfDoc.save();
 }
-app.get('/', (req, res) => {
-    res.send('Hello World!');
-});
 
 app.post('/generate-pdf', async (req, res) => {
     const { htmlContent, canvasWidth } = req.body;
@@ -97,22 +94,10 @@ app.post('/generate-pdf', async (req, res) => {
 
     let browser;
     try {
-        if (process.env.VERCEL) {
-            const chromium = require('@sparticuz/chromium');
-            const puppeteerCore = require('puppeteer-core');
-            browser = await puppeteerCore.launch({
-                args: chromium.args,
-                defaultViewport: chromium.defaultViewport,
-                executablePath: await chromium.executablePath(),
-                headless: chromium.headless,
-            });
-        } else {
-            const puppeteer = require('puppeteer');
-            browser = await puppeteer.launch({
-                headless: "new",
-                args: ["--no-sandbox", "--disable-setuid-sandbox"]
-            });
-        }
+        browser = await puppeteer.launch({
+            headless: "new",
+            args: ["--no-sandbox", "--disable-setuid-sandbox"]
+        });
 
         const page = await browser.newPage();
         const screenshots = [];
@@ -142,5 +127,3 @@ app.post('/generate-pdf', async (req, res) => {
 app.listen(PORT, () =>
     console.log(`PDF server running on http://localhost:${PORT}`)
 );
-
-module.exports = app;
