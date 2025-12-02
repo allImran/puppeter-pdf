@@ -16,14 +16,14 @@ app.use(express.static('public'));
  * @param {string} htmlContent - The HTML content to render.
  * @returns {Promise<Buffer>} - The screenshot buffer.
  */
-async function generateScreenshot(page, htmlContent) {
+async function generateScreenshot(page, htmlContent, canvasWidth=1380) {
     const styledHtml = `
         <html>
             <head>
                 <link rel="stylesheet" href="http://localhost:${PORT}/css/app.css">
             </head>
             <body>
-              <div style="width: 1380px;">
+              <div style="">
                 ${htmlContent}
               </div>
             </body>
@@ -46,9 +46,9 @@ async function generateScreenshot(page, htmlContent) {
     // Resize viewport to full height to avoid scrolling issues
     // User requested PDF width 1380, so we set viewport width to 1380
     await page.setViewport({
-        width: 1380,
+        width: canvasWidth,
         height: bodyHeight, // Removed buffer to avoid white gap
-        deviceScaleFactor: 2
+        // deviceScaleFactor: 2
     });
 
     return await page.screenshot({
@@ -89,7 +89,7 @@ app.get('/', (req, res) => {
 });
 
 app.post('/generate-pdf', async (req, res) => {
-    const { htmlContent } = req.body;
+    const { htmlContent, canvasWidth } = req.body;
 
     if (!htmlContent || !Array.isArray(htmlContent) || htmlContent.length === 0) {
         return res.status(400).json({ error: "htmlContent must be a non-empty array" });
@@ -119,7 +119,7 @@ app.post('/generate-pdf', async (req, res) => {
 
         // Process sequentially to ensure order and stability
         for (const html of htmlContent) {
-            const screenshot = await generateScreenshot(page, html);
+            const screenshot = await generateScreenshot(page, html, canvasWidth);
             screenshots.push(screenshot);
         }
 

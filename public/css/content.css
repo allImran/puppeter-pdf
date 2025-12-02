@@ -1,0 +1,690 @@
+/* Style for report page ck editor */
+.toolbar-container {
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+}
+
+.report-ckeditor__container .ck-editor__editable::-webkit-scrollbar {
+    height: 5px;
+    width: 5px;
+    display: initial !important;
+}
+
+.report-ckeditor__container .ck-editor__editable::-webkit-scrollbar-thumb {
+    border-radius: 2px;
+    background: #8d8d8d;
+}
+
+.report-ckeditor__container .ck.ck-editor__editable_inline {
+    padding-left: 40px !important;
+    padding-right: 40px !important;
+}
+
+.report-ckeditor__container .ck.ck-toolbar {
+    background: transparent !important;
+    border-width: 0px !important;
+}
+
+.report-ckeditor__container .process>.title {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 32px;
+}
+
+.report-ckeditor__container .module>.title,
+.report-ckeditor__container .level-1>.title,
+.report-ckeditor__container .level-2>.title,
+.report-ckeditor__container .level-3>.title,
+.report-ckeditor__container .level-4>.title {
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.report-ckeditor__container .module>.description,
+.report-ckeditor__container .level-1>.description,
+.report-ckeditor__container .level-2>.description,
+.report-ckeditor__container .level-3>.description,
+.report-ckeditor__container .level-4>.description {
+    font-size: 16px !important;
+    line-height: 30px !important;
+    font-weight: 300;
+}
+
+.report-ckeditor__container .module>.title {
+    font-weight: 700;
+}
+
+.report-ckeditor__container .level-1>.title {
+    font-weight: 600;
+}
+
+.report-ckeditor__container .level-2>.title {
+    font-weight: 500;
+}
+
+.report-ckeditor__container .level-3>.title,
+.report-ckeditor__container .level-4>.title {
+    font-weight: 400;
+}
+
+.report-ckeditor__container .content-box .title,
+.report-ckeditor__container .content-box .description {
+    margin: 0;
+}
+
+.report-ckeditor__container .content-box *:not(.title, strong) {
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 30px;
+    /* color: var(--color-primary-one) !important; */
+}
+
+.report-content-outline .content-box {
+    outline: 0.5px dashed #ddd;
+}
+
+/*End report style area*/
+.ck-focused {
+    border-color: transparent !important;
+    box-shadow: none !important;
+}
+ .table {
+    display: block;
+    min-width: 100%;
+    max-width: 100%;
+    overflow-x: auto;
+    overflow-y: hidden;
+    margin: 0;
+}
+ table {
+    display: inline-block;
+    overflow: auto;
+    max-width: 100%;
+    font-size: 20px;
+    font-family: 'Poppins light';
+    margin-bottom: 28px !important;
+    line-height: var(--strategySectionLineHeight);
+}
+
+@media all and (max-width: 390px) {
+ table {
+        font-size: 16px;
+    }
+}
+
+ .table th {
+    font-family: 'Poppins';
+    font-weight: bold;
+}
+ .table > figcaption {
+    display: block;
+}
+ tbody strong {
+    font-family: 'Poppins';
+}
+ p {
+    margin-bottom: 10px;
+}
+
+.document-outline-container {
+    --ck-document-outline-indent-level-1: 25px;
+    --ck-document-outline-indent-level-2: 35px;
+    --ck-document-outline-indent-level-3: 45px;
+    --ck-document-outline-indent-level-4: 55px;
+    --ck-document-outline-indent-level-5: 65px;
+    --ck-document-outline-base-font-size: 12px;
+    --ck-document-outline-item-active-color: var(--color-primary-four);
+}
+
+:root {
+    --strategySectionLineHeight: 1.5;
+}
+
+/* Left sidebar content */
+
+.strategy-section-left h1 {
+    font-size: 48px;
+    line-height: var(--strategySectionLineHeight);
+}
+
+.strategy-section-left h2 {
+    font-size: 48px;
+    line-height: var(--strategySectionLineHeight);
+    font-family:  poppins black;
+}
+
+/* .strategy-section-left h2:first-child {
+    font-size: 48px;
+    line-height: var(--strategySectionLineHeight);
+} */
+
+/* .strategy-section-left h2:not(:first-child) {
+    font-size: 38px;
+    line-height: var(--strategySectionLineHeight);
+} */
+
+.strategy-section-left h3 {
+    font-size: 32px;
+    line-height: var(--strategySectionLineHeight);
+    margin-block-end: 0.25rem;
+}
+
+.strategy-section-left h4 {
+    font-size: 24px;
+    line-height: var(--strategySectionLineHeight);
+    margin-block-end: 0.25rem;
+}
+
+.strategy-section-left p,
+.strategy-section-left li {
+    font-size: 20px;
+    font-family: 'Poppins light';
+    margin-bottom: 15px !important;
+    line-height: var(--strategySectionLineHeight);
+}
+
+.strategy-section-left p strong,
+.strategy-section-left li strong {
+    font-family: 'Poppins bold';
+}
+.visualizer-font-inherit.strategy-section-left p strong,
+.visualizer-font-inherit.strategy-section-left p, 
+.visualizer-font-inherit.strategy-section-left li,
+.visualizer-font-inherit.strategy-section-left li strong {
+    font-family: inherit !important;
+}
+
+.strategy-section-left .ck-list-bogus-paragraph {
+    line-height: var(--strategySectionLineHeight);
+}
+
+@media all and (max-width: 1600px) {
+    .strategy-section-left h2:first-child {
+        font-size: 30px !important;
+        line-height: 35px;
+    }
+
+    .insta_ui_ck__editor .ck.ck-editor__editable_inline h2:first-child {
+        font-size: 30px !important;
+        line-height: 35px !important;
+    }
+
+    /* .insta_ui_ck__editor .ck.ck-editor__editable_inline :first-child {
+        font-size: 30px;
+       line-height: 35px ;
+    } */
+}
+
+@media all and (max-width: 768px) {
+    :is(.strategy-section-left, .strategy-section-right) .table {
+        max-width: 100vw !important;
+        min-width: 100vw !important;
+        overflow: auto;
+    }
+
+    :is(.strategy-section-left, .strategy-section-right) .table table {
+        max-width: 100vw;
+        min-width: 100vw;
+        overflow: auto;
+    }
+
+    :is(.strategy-section-left, .strategy-section-right) .table table :is(th, td) {
+        font-size: 12px;
+    }
+}
+
+@media all and (max-width: 430px) {
+    :is(.strategy-section-left, .strategy-section-right) .table {
+        max-width: 87vw !important;
+        min-width: 87vw !important;
+        overflow: auto;
+    }
+
+    :is(.strategy-section-left, .strategy-section-right) .table table :is(th, td) {
+        font-size: 10px;
+    }
+}
+
+@media all and (max-width: 380px) {
+    :is(.strategy-section-left, .strategy-section-right) .table {
+        max-width: 90vw !important;
+        min-width: 90vw !important;
+        overflow: auto;
+    }
+
+    :is(.strategy-section-left, .strategy-section-right) .table table :is(th, td) {
+        font-size: 10px;
+    }
+}
+
+.ctx-report {
+    h1 {
+        font-size: 42px;
+        line-height: 1.5;
+    }
+
+    h2 {
+        font-size: 42px;
+        line-height: 1.5;
+    }
+
+    h3 {
+        font-size: 32px;
+    }
+
+    h4 {
+        font-size: 24px;
+    }
+
+    p,
+    li {
+        font-size: 18px;
+        margin-bottom: 26px !important;
+        line-height: 30px;
+    }
+
+    .table table {
+        font-size: 18px;
+    }
+
+    @media all and (max-width: 390px) {
+        h1 {
+            font-size: 24px !important;
+            line-height: 24px;
+        }
+
+        h2 {
+            font-size: 22px !important;
+            line-height: 22px;
+        }
+
+        h3 {
+            font-size: 20px !important;
+        }
+
+        h4 {
+            font-size: 18px;
+        }
+
+        p,
+        li {
+            font-size: 16px;
+            margin-bottom: 20px !important;
+            line-height: 20px;
+        }
+
+        .table table {
+            font-size: 16px;
+        }
+    }
+
+    @media all and (max-width: 1024px) {
+        h1 {
+            font-size: 34px;
+            line-height: 34px;
+        }
+
+        h2 {
+            font-size: 26px;
+            line-height: 26px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        h4 {
+            font-size: 20px;
+        }
+
+        p,
+        li {
+            font-size: 18px;
+            margin-bottom: 20px !important;
+            line-height: 20px;
+        }
+
+        .table table {
+            font-size: 18px;
+        }
+    }
+
+}
+
+@media all and (max-width: 390px) {
+    .ctx-report {
+        h1 {
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+        h2:first-child {
+            font-size: 22px;
+            line-height: 30px;
+        }
+
+        h2:not(:first-child) {
+            font-size: 18px;
+        }
+
+        h3 {
+            font-size: 36px;
+        }
+
+        h4 {
+            font-size: 14px;
+        }
+
+        p,
+        li {
+            font-size: 14px;
+            margin-bottom: 16px !important;
+        }
+
+        .table table {
+            font-size: 14px;
+        }
+    }
+}
+
+/* Right sidebar content */
+.strategy-section-right h1 {
+    font-size: 42px;
+    line-height: var(--strategySectionLineHeight);
+}
+
+.strategy-section-right h2:first-child {
+    font-size: 28px;
+    line-height: var(--strategySectionLineHeight);
+}
+
+.strategy-section-right h2:not(:first-child) {
+    font-size: 20px;
+    line-height: var(--strategySectionLineHeight);
+}
+
+.strategy-section-right h3 {
+    font-size: 20px;
+    line-height: var(--strategySectionLineHeight);
+}
+
+.strategy-section-right h4 {
+    font-size: 20px;
+    line-height: var(--strategySectionLineHeight);
+}
+
+.strategy-section-right p,
+.strategy-section-right li {
+    font-size: 20px;
+    margin-bottom: 28px !important;
+    font-family: 'Poppins light';
+    line-height: var(--strategySectionLineHeight);
+}
+
+.strategy-section-right p strong,
+.strategy-section-right li strong {
+    font-family: 'Poppins bold';
+}
+
+.strategy-section-right .ck-list-bogus-paragraph {
+    line-height: var(--strategySectionLineHeight);
+}
+
+.strategy-canvas h1:first-child,
+.strategy-canvas h2:first-child {
+    font-size: 48px !important;
+}
+
+.strategy-canvas h3:first-child {
+    font-size: 34px !important;
+}
+
+.strategy-canvas h4:first-child {
+    font-size: 28px !important;
+}
+
+@media all and (max-width: 1024px) {
+    :root {
+        --strategySectionLineHeight: 1.5;
+    }
+
+    .strategy-section-left h1 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .strategy-section-left h2 {
+        font-size: 28px;
+        margin-bottom: 10px;
+    }
+
+    .strategy-section-left h3 {
+        font-size: 20px;
+        margin-bottom: 10px;
+    }
+
+    .strategy-section-left h2:first-child {
+        font-size: 28px;
+    }
+
+    .strategy-section-left h2:not(:first-child) {
+        font-size: 20px;
+    }
+
+    .strategy-section-right h2 {
+        font-size: 20px;
+        line-height: var(--strategySectionLineHeight);
+        margin-bottom: 10px;
+    }
+
+    :is(.strategy-section-right, .strategy-section-left) :is(p, li) {
+        font-size: 18px;
+    }
+
+    :is(.strategy-section-right, .strategy-section-left) h2:first-child {
+        font-size: 30px !important;
+    }
+}
+
+@media all and (max-width: 550px) {
+
+    .strategy-section-left h1 {
+        font-size: 24px;
+    }
+
+    .strategy-section-left h2 {
+        font-size: 16px;
+    }
+
+    .strategy-section-left h3 {
+        font-size: 16px;
+    }
+
+    .strategy-section-right h2 {
+        font-size: 16px;
+    }
+
+    .strategy-section-left h2:first-child {
+        font-size: 24px;
+    }
+
+    .strategy-section-left h2:not(:first-child) {
+        font-size: 16px;
+    }
+
+    :is(.strategy-section-right, .strategy-section-left) :is(p, li) {
+        font-size: 14px;
+    }
+
+    :is(.strategy-section-right, .strategy-section-left) h2:first-child {
+        font-size: 20px !important;
+    }
+}
+
+.full-screen {
+    .strategy-section-left {
+        h1 {
+            font-size: 52px;
+            line-height: var(--strategySectionLineHeight);
+        }
+
+        h2:first-child {
+            font-size: 52px;
+            line-height: var(--strategySectionLineHeight);
+        }
+
+        h2:not(:first-child) {
+            font-size: 35px;
+            line-height: var(--strategySectionLineHeight);
+        }
+
+        h3 {
+            font-size: 30px;
+            line-height: var(--strategySectionLineHeight);
+        }
+
+        h4 {
+            font-size: 30px;
+            line-height: var(--strategySectionLineHeight);
+        }
+
+        p,
+        li {
+            font-size: 30px;
+            font-family: 'Poppins light';
+            margin-bottom: 28px !important;
+            line-height: var(--strategySectionLineHeight);
+        }
+
+        p strong,
+        li strong {
+            font-family: 'Poppins bold';
+        }
+
+        .ck-list-bogus-paragraph {
+            line-height: var(--strategySectionLineHeight);
+        }
+
+        .table table {
+            font-size: 28px;
+        }
+    }
+
+    @media all and (max-width: 1366px) {
+        .ctx-report {
+            h1 {
+                font-size: 42px;
+                line-height: 1.5;
+            }
+
+            h2:first-child {
+                font-size: 42px;
+                line-height: 1.5;
+            }
+
+            h3 {
+                font-size: 32px;
+            }
+
+            h4 {
+                font-size: 24px;
+            }
+
+            p,
+            li {
+                font-size: 18px;
+                margin-bottom: 26px !important;
+                --strategySectionLineHeight: 30px !important;
+            }
+
+            .table table {
+                font-size: 18px;
+            }
+        }
+    }
+
+    @media all and (max-width: 390px) {
+        .strategy-section-left {
+
+            h1 {
+                font-size: 24px;
+                line-height: var(--strategySectionLineHeight);
+            }
+
+            h2:first-child {
+                font-size: 24px;
+                line-height: var(--strategySectionLineHeight);
+            }
+
+            h2:not(:first-child) {
+                font-size: 24px;
+                line-height: var(--strategySectionLineHeight);
+            }
+
+            h3 {
+                font-size: 22px;
+                line-height: var(--strategySectionLineHeight);
+            }
+
+            h4 {
+                font-size: 20px;
+                line-height: var(--strategySectionLineHeight);
+            }
+
+            p,
+            li {
+                font-size: 16px;
+                font-family: 'Poppins light';
+                margin-bottom: 17px !important;
+                line-height: var(--strategySectionLineHeight);
+            }
+
+            p strong,
+            li strong {
+                font-family: 'Poppins bold';
+            }
+
+            .ck-list-bogus-paragraph {
+                line-height: var(--strategySectionLineHeight);
+            }
+
+            .table table {
+                font-size: 16px;
+            }
+        }
+
+        .ctx-report {
+            h1 {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            h2:first-child {
+                font-size: 24px;
+                line-height: 30px;
+            }
+
+            h2:not(:first-child) {
+                font-size: 20px;
+            }
+
+            h3 {
+                font-size: 38px;
+            }
+
+            h4 {
+                font-size: 16px;
+            }
+
+            p,
+            li {
+                font-size: 16px;
+                margin-bottom: 18px !important;
+            }
+
+            .table table {
+                font-size: 16px;
+            }
+        }
+    }
+}
