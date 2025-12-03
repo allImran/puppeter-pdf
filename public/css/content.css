@@ -1,4 +1,22 @@
 /* Style for report page ck editor */
+
+.inst_ck_output.ck-content :where(table) {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.inst_ck_output.ck-content
+    :where(tbody td:first-child, thead th:first-child, tfoot td:first-child):not(:where([class~='not-prose'] *)) {
+    padding: 0.4em !important;
+}
+
+.inst_ck_output.ck-content :where(tbody td, tbody th, thead th, tfoot td) {
+    border: 1px solid #dddddd !important;
+    text-align: left;
+    padding: 0.4em;
+    min-width: 2em;
+}
 .toolbar-container {
     background: #fff;
     border-bottom: 1px solid #ddd;
@@ -88,7 +106,8 @@
     border-color: transparent !important;
     box-shadow: none !important;
 }
- .table {
+
+.ck-content .table {
     display: block;
     min-width: 100%;
     max-width: 100%;
@@ -96,7 +115,8 @@
     overflow-y: hidden;
     margin: 0;
 }
- table {
+
+.ck-content table {
     display: inline-block;
     overflow: auto;
     max-width: 100%;
@@ -107,22 +127,26 @@
 }
 
 @media all and (max-width: 390px) {
- table {
+    .ck-content table {
         font-size: 16px;
     }
 }
 
- .table th {
+
+.ck-content .table th {
     font-family: 'Poppins';
     font-weight: bold;
 }
- .table > figcaption {
+
+.ck-content .table > figcaption {
     display: block;
 }
- tbody strong {
+
+.ck-content tbody strong {
     font-family: 'Poppins';
 }
- p {
+
+.ck-content p {
     margin-bottom: 10px;
 }
 
@@ -142,64 +166,64 @@
 
 /* Left sidebar content */
 
-.strategy-section-left h1 {
+.strategy-section-left .ck-content h1 {
     font-size: 48px;
     line-height: var(--strategySectionLineHeight);
 }
 
-.strategy-section-left h2 {
+.strategy-section-left .ck-content h2 {
     font-size: 48px;
     line-height: var(--strategySectionLineHeight);
     font-family:  poppins black;
 }
 
-/* .strategy-section-left h2:first-child {
+/* .strategy-section-left .ck-content h2:first-child {
     font-size: 48px;
     line-height: var(--strategySectionLineHeight);
 } */
 
-/* .strategy-section-left h2:not(:first-child) {
+/* .strategy-section-left .ck-content h2:not(:first-child) {
     font-size: 38px;
     line-height: var(--strategySectionLineHeight);
 } */
 
-.strategy-section-left h3 {
+.strategy-section-left .ck-content h3 {
     font-size: 32px;
     line-height: var(--strategySectionLineHeight);
     margin-block-end: 0.25rem;
 }
 
-.strategy-section-left h4 {
+.strategy-section-left .ck-content h4 {
     font-size: 24px;
     line-height: var(--strategySectionLineHeight);
     margin-block-end: 0.25rem;
 }
 
-.strategy-section-left p,
-.strategy-section-left li {
+.strategy-section-left .ck-content p,
+.strategy-section-left .ck-content li {
     font-size: 20px;
     font-family: 'Poppins light';
     margin-bottom: 15px !important;
     line-height: var(--strategySectionLineHeight);
 }
 
-.strategy-section-left p strong,
-.strategy-section-left li strong {
+.strategy-section-left .ck-content p strong,
+.strategy-section-left .ck-content li strong {
     font-family: 'Poppins bold';
 }
-.visualizer-font-inherit.strategy-section-left p strong,
-.visualizer-font-inherit.strategy-section-left p, 
-.visualizer-font-inherit.strategy-section-left li,
-.visualizer-font-inherit.strategy-section-left li strong {
+.visualizer-font-inherit.strategy-section-left .ck-content p strong,
+.visualizer-font-inherit.strategy-section-left .ck-content p, 
+.visualizer-font-inherit.strategy-section-left .ck-content li,
+.visualizer-font-inherit.strategy-section-left .ck-content li strong {
     font-family: inherit !important;
 }
 
-.strategy-section-left .ck-list-bogus-paragraph {
+.strategy-section-left .ck-content .ck-list-bogus-paragraph {
     line-height: var(--strategySectionLineHeight);
 }
 
 @media all and (max-width: 1600px) {
-    .strategy-section-left h2:first-child {
+    .strategy-section-left .ck-content h2:first-child {
         font-size: 30px !important;
         line-height: 35px;
     }
@@ -216,48 +240,48 @@
 }
 
 @media all and (max-width: 768px) {
-    :is(.strategy-section-left, .strategy-section-right) .table {
+    :is(.strategy-section-left, .strategy-section-right) .ck-content .table {
         max-width: 100vw !important;
         min-width: 100vw !important;
         overflow: auto;
     }
 
-    :is(.strategy-section-left, .strategy-section-right) .table table {
+    :is(.strategy-section-left, .strategy-section-right) .ck-content .table table {
         max-width: 100vw;
         min-width: 100vw;
         overflow: auto;
     }
 
-    :is(.strategy-section-left, .strategy-section-right) .table table :is(th, td) {
+    :is(.strategy-section-left, .strategy-section-right) .ck-content .table table :is(th, td) {
         font-size: 12px;
     }
 }
 
 @media all and (max-width: 430px) {
-    :is(.strategy-section-left, .strategy-section-right) .table {
+    :is(.strategy-section-left, .strategy-section-right) .ck-content .table {
         max-width: 87vw !important;
         min-width: 87vw !important;
         overflow: auto;
     }
 
-    :is(.strategy-section-left, .strategy-section-right) .table table :is(th, td) {
+    :is(.strategy-section-left, .strategy-section-right) .ck-content .table table :is(th, td) {
         font-size: 10px;
     }
 }
 
 @media all and (max-width: 380px) {
-    :is(.strategy-section-left, .strategy-section-right) .table {
+    :is(.strategy-section-left, .strategy-section-right) .ck-content .table {
         max-width: 90vw !important;
         min-width: 90vw !important;
         overflow: auto;
     }
 
-    :is(.strategy-section-left, .strategy-section-right) .table table :is(th, td) {
+    :is(.strategy-section-left, .strategy-section-right) .ck-content .table table :is(th, td) {
         font-size: 10px;
     }
 }
 
-.ctx-report {
+.ctx-report .ck-content {
     h1 {
         font-size: 42px;
         line-height: 1.5;
@@ -352,7 +376,7 @@
 }
 
 @media all and (max-width: 390px) {
-    .ctx-report {
+    .ctx-report .ck-content {
         h1 {
             font-size: 22px;
             line-height: 30px;
@@ -388,58 +412,58 @@
 }
 
 /* Right sidebar content */
-.strategy-section-right h1 {
+.strategy-section-right .ck-content h1 {
     font-size: 42px;
     line-height: var(--strategySectionLineHeight);
 }
 
-.strategy-section-right h2:first-child {
+.strategy-section-right .ck-content h2:first-child {
     font-size: 28px;
     line-height: var(--strategySectionLineHeight);
 }
 
-.strategy-section-right h2:not(:first-child) {
+.strategy-section-right .ck-content h2:not(:first-child) {
     font-size: 20px;
     line-height: var(--strategySectionLineHeight);
 }
 
-.strategy-section-right h3 {
+.strategy-section-right .ck-content h3 {
     font-size: 20px;
     line-height: var(--strategySectionLineHeight);
 }
 
-.strategy-section-right h4 {
+.strategy-section-right .ck-content h4 {
     font-size: 20px;
     line-height: var(--strategySectionLineHeight);
 }
 
-.strategy-section-right p,
-.strategy-section-right li {
+.strategy-section-right .ck-content p,
+.strategy-section-right .ck-content li {
     font-size: 20px;
     margin-bottom: 28px !important;
     font-family: 'Poppins light';
     line-height: var(--strategySectionLineHeight);
 }
 
-.strategy-section-right p strong,
-.strategy-section-right li strong {
+.strategy-section-right .ck-content p strong,
+.strategy-section-right .ck-content li strong {
     font-family: 'Poppins bold';
 }
 
-.strategy-section-right .ck-list-bogus-paragraph {
+.strategy-section-right .ck-content .ck-list-bogus-paragraph {
     line-height: var(--strategySectionLineHeight);
 }
 
-.strategy-canvas h1:first-child,
-.strategy-canvas h2:first-child {
+.strategy-canvas .ck-content h1:first-child,
+.strategy-canvas .ck-content h2:first-child {
     font-size: 48px !important;
 }
 
-.strategy-canvas h3:first-child {
+.strategy-canvas .ck-content h3:first-child {
     font-size: 34px !important;
 }
 
-.strategy-canvas h4:first-child {
+.strategy-canvas .ck-content h4:first-child {
     font-size: 28px !important;
 }
 
@@ -448,81 +472,81 @@
         --strategySectionLineHeight: 1.5;
     }
 
-    .strategy-section-left h1 {
+    .strategy-section-left .ck-content h1 {
         font-size: 28px;
         margin-bottom: 10px;
     }
 
-    .strategy-section-left h2 {
+    .strategy-section-left .ck-content h2 {
         font-size: 28px;
         margin-bottom: 10px;
     }
 
-    .strategy-section-left h3 {
+    .strategy-section-left .ck-content h3 {
         font-size: 20px;
         margin-bottom: 10px;
     }
 
-    .strategy-section-left h2:first-child {
+    .strategy-section-left .ck-content h2:first-child {
         font-size: 28px;
     }
 
-    .strategy-section-left h2:not(:first-child) {
+    .strategy-section-left .ck-content h2:not(:first-child) {
         font-size: 20px;
     }
 
-    .strategy-section-right h2 {
+    .strategy-section-right .ck-content h2 {
         font-size: 20px;
         line-height: var(--strategySectionLineHeight);
         margin-bottom: 10px;
     }
 
-    :is(.strategy-section-right, .strategy-section-left) :is(p, li) {
+    :is(.strategy-section-right, .strategy-section-left) .ck-content :is(p, li) {
         font-size: 18px;
     }
 
-    :is(.strategy-section-right, .strategy-section-left) h2:first-child {
+    :is(.strategy-section-right, .strategy-section-left) .ck-content h2:first-child {
         font-size: 30px !important;
     }
 }
 
 @media all and (max-width: 550px) {
 
-    .strategy-section-left h1 {
+    .strategy-section-left .ck-content h1 {
         font-size: 24px;
     }
 
-    .strategy-section-left h2 {
+    .strategy-section-left .ck-content h2 {
         font-size: 16px;
     }
 
-    .strategy-section-left h3 {
+    .strategy-section-left .ck-content h3 {
         font-size: 16px;
     }
 
-    .strategy-section-right h2 {
+    .strategy-section-right .ck-content h2 {
         font-size: 16px;
     }
 
-    .strategy-section-left h2:first-child {
+    .strategy-section-left .ck-content h2:first-child {
         font-size: 24px;
     }
 
-    .strategy-section-left h2:not(:first-child) {
+    .strategy-section-left .ck-content h2:not(:first-child) {
         font-size: 16px;
     }
 
-    :is(.strategy-section-right, .strategy-section-left) :is(p, li) {
+    :is(.strategy-section-right, .strategy-section-left) .ck-content :is(p, li) {
         font-size: 14px;
     }
 
-    :is(.strategy-section-right, .strategy-section-left) h2:first-child {
+    :is(.strategy-section-right, .strategy-section-left) .ck-content h2:first-child {
         font-size: 20px !important;
     }
 }
 
 .full-screen {
-    .strategy-section-left {
+    .strategy-section-left .ck-content {
         h1 {
             font-size: 52px;
             line-height: var(--strategySectionLineHeight);
@@ -571,7 +595,7 @@
     }
 
     @media all and (max-width: 1366px) {
-        .ctx-report {
+        .ctx-report .ck-content {
             h1 {
                 font-size: 42px;
                 line-height: 1.5;
@@ -604,7 +628,7 @@
     }
 
     @media all and (max-width: 390px) {
-        .strategy-section-left {
+        .strategy-section-left .ck-content {
 
             h1 {
                 font-size: 24px;
@@ -653,7 +677,7 @@
             }
         }
 
-        .ctx-report {
+        .ctx-report .ck-content {
             h1 {
                 font-size: 24px;
                 line-height: 30px;
