@@ -23,9 +23,11 @@ async function generateScreenshot(page, htmlContent, canvasWidth=1380) {
                 <link rel="stylesheet" href="http://localhost:${PORT}/css/app.css">
             </head>
             <body>
-                <div class="strategy-canvas strategy-section-left">
-                    <div class="ck-content inst_ck_output">
-                        ${htmlContent}
+                <div style="width: ${canvasWidth+100}px;">
+                    <div class="strategy-canvas strategy-section-left">
+                        <div class="ck-content inst_ck_output">
+                            ${htmlContent}
+                        </div>
                     </div>
                 </div>
             </body>
@@ -48,7 +50,7 @@ async function generateScreenshot(page, htmlContent, canvasWidth=1380) {
     // Resize viewport to full height to avoid scrolling issues
     // User requested PDF width 1380, so we set viewport width to 1380
     await page.setViewport({
-        width: canvasWidth+140,
+        width: canvasWidth,
         height: bodyHeight, // Removed buffer to avoid white gap
         // deviceScaleFactor: 2
     });
