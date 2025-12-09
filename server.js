@@ -23,11 +23,9 @@ async function generateScreenshot(page, htmlContent, canvasWidth=1380) {
                 <link rel="stylesheet" href="http://localhost:${PORT}/css/app.css">
             </head>
             <body>
-                <div style="width: ${canvasWidth+100}px;">
-                    <div class="strategy-canvas strategy-section-left">
-                        <div class="ck-content inst_ck_output">
-                            ${htmlContent}
-                        </div>
+                <div class="strategy-canvas strategy-section-left">
+                    <div class="ck-content inst_ck_output">
+                        ${htmlContent}
                     </div>
                 </div>
             </body>
