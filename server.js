@@ -48,7 +48,7 @@ async function generateScreenshot(page, htmlContent, canvasWidth=1380) {
     // Resize viewport to full height to avoid scrolling issues
     // User requested PDF width 1380, so we set viewport width to 1380
     await page.setViewport({
-        width: canvasWidth+40,
+        width: canvasWidth+140,
         height: bodyHeight, // Removed buffer to avoid white gap
         // deviceScaleFactor: 2
     });
