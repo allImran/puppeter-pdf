@@ -4,3 +4,43 @@
 @import 'vlg.css';
 @import 'table.css';
 @import 'ck-table-reset.css';
+
+
+/* font family start */
+@font-face {
+    font-family: 'Poppins light'; /* Font family name */
+    /* Specify the Google Fonts URL as the source */
+    src: url('../fonts/Poppins-Light.ttf');
+    font-weight: 300; /* Specify the font weight */
+}
+@font-face {
+    font-family: 'Poppins extra light'; /* Font family name */
+    /* Specify the Google Fonts URL as the source */
+    src: url('../fonts/Poppins-ExtraLight.ttf');
+    font-weight: 200; /* Specify the font weight */
+}
+@font-face {
+    font-family: 'Poppins'; /* Font family name */
+    /* Specify the Google Fonts URL as the source */
+    src: url('../fonts/Poppins-Regular.ttf');
+    font-weight: 400; /* Specify the font weight */
+}
+@font-face {
+    font-family: 'Poppins medium'; /* Font family name */
+    /* Specify the Google Fonts URL as the source */
+    src: url('../fonts/Poppins-Medium.ttf');
+    font-weight: 400; /* Specify the font weight */
+}
+@font-face {
+    font-family: 'Poppins bold'; /* Font family name */
+    /* Specify the Google Fonts URL as the source */
+    src: url('../fonts/Poppins-Bold.ttf');
+    font-weight: 700; /* Specify the font weight */
+}
+@font-face {
+    font-family: 'Poppins black'; /* Font family name */
+    /* Specify the Google Fonts URL as the source */
+    src: url('../fonts/Poppins-Black.ttf');
+    font-weight: 900; /* Specify the font weight */
+}
+/* font family end */

@@ -20,7 +20,13 @@ async function generateScreenshot(page, htmlContent, canvasWidth=1380) {
     const styledHtml = `
         <html>
             <head>
+                <link rel="preconnect" href="https://fonts.googleapis.com">
+                <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+                <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
                 <link rel="stylesheet" href="http://localhost:${PORT}/css/app.css">
+                <style>
+                    body { font-family: 'Poppins', sans-serif; }
+                </style>
             </head>
             <body>
                 <div class="strategy-canvas strategy-section-left">
@@ -34,6 +40,9 @@ async function generateScreenshot(page, htmlContent, canvasWidth=1380) {
     await page.setContent(styledHtml, {
         waitUntil: "networkidle0"
     });
+
+    // Wait for fonts to be ready
+    await page.evaluate(() => document.fonts.ready);
 
     // Calculate the full height of the content
     // We target the wrapper div to get the exact content height
