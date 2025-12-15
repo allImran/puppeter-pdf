@@ -7,41 +7,37 @@
 @import 'tablecolumnresize.css';
 
 
-/* font family start */
 @font-face {
-    font-family: 'Poppins light'; /* Font family name */
-    /* Specify the Google Fonts URL as the source */
+    font-family: 'georgia'; 
+    src: url('../fonts/georgia.ttf');
+}
+@font-face {
+    font-family: 'Poppins light'; 
     src: url('../fonts/Poppins-Light.ttf');
-    font-weight: 300; /* Specify the font weight */
+    font-weight: 300;
 }
 @font-face {
-    font-family: 'Poppins extra light'; /* Font family name */
-    /* Specify the Google Fonts URL as the source */
+    font-family: 'Poppins extra light'; 
     src: url('../fonts/Poppins-ExtraLight.ttf');
-    font-weight: 200; /* Specify the font weight */
+    font-weight: 200;
 }
 @font-face {
-    font-family: 'Poppins'; /* Font family name */
-    /* Specify the Google Fonts URL as the source */
+    font-family: 'Poppins'; 
     src: url('../fonts/Poppins-Regular.ttf');
-    font-weight: 400; /* Specify the font weight */
+    font-weight: 400;
 }
 @font-face {
-    font-family: 'Poppins medium'; /* Font family name */
-    /* Specify the Google Fonts URL as the source */
+    font-family: 'Poppins medium'; 
     src: url('../fonts/Poppins-Medium.ttf');
-    font-weight: 400; /* Specify the font weight */
+    font-weight: 400;
 }
 @font-face {
-    font-family: 'Poppins bold'; /* Font family name */
-    /* Specify the Google Fonts URL as the source */
+    font-family: 'Poppins bold'; 
     src: url('../fonts/Poppins-Bold.ttf');
-    font-weight: 700; /* Specify the font weight */
+    font-weight: 700;
 }
 @font-face {
-    font-family: 'Poppins black'; /* Font family name */
-    /* Specify the Google Fonts URL as the source */
+    font-family: 'Poppins black'; 
     src: url('../fonts/Poppins-Black.ttf');
-    font-weight: 900; /* Specify the font weight */
+    font-weight: 900;
 }
-/* font family end */
